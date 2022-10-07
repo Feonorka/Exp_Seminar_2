@@ -1,17 +1,12 @@
-﻿// Задача 22: Напишите программу, которая
-// принимает на вход число (N) и выдаёт таблицу
-// квадратов чисел от 1 до N.
-// 5 -> 1, 4, 9, 16, 25.
-// 2 -> 1,4
-
+﻿
 Console.WriteLine("Введите число:");
 int num = Convert.ToInt32(Console.ReadLine());
 
-// Метод, который возводит в квадрат
-int Deegri(int iskomoe)
+// Метод, который возводит в куб
+int Cub(int iskomoe)
 {
     int res = 0;
-    res = iskomoe * iskomoe;
+    res = iskomoe * iskomoe* iskomoe;
     return res;
 }
 
@@ -44,11 +39,11 @@ void SuperM(int numM)
     if (numM > 0 )
     {
     int i = 1;
-    int itog = Deegri(numM);
+    int itog = Cub(numM);
     int kolvoOut = KolNumber(itog);
     while (i <= numM)
     {
-        int resultOfdeegre = Deegri(i);                 // Происходит возведение в степень
+        int resultOfdeegre = Cub(i);                 // Происходит возведение в степень
         int kolvoIn = KolNumber(resultOfdeegre);        // У числа происходит подсчет цифр в числе
         int nuMpro = kolvoOut - kolvoIn;
         string probelStr = Probel(nuMpro);            // Пропечатывается нужное количество пробелов
@@ -61,3 +56,4 @@ void SuperM(int numM)
     else Console.WriteLine("Вы ввели отрицательное число");
 }
 SuperM(num);
+
